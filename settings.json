@@ -8061,6 +8061,8 @@
     {
       "name": "bFreebiesSeen",
       "section": "General",
+      "ini": "SkyrimPrefs.ini",
+      "alwaysPrint": true,
       "type": "boolean",
       "value": {
         "default": 0
