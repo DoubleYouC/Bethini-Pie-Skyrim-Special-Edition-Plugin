@@ -1648,7 +1648,8 @@
       },
       "Shadows": {
         "Pack": {
-          "Side": "Left"
+          "Side": "Left",
+          "Fill": "X"
         },
         "NumberOfVerticallyStackedSettings": "7",
         "Settings": {
@@ -2144,7 +2145,10 @@
     },
     "View Distance": {
       "Near Details": {
-        
+        "Pack": {
+          "Side": "Top",
+          "Fill": "Y"
+        },
         "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
           "Environment Map Fade Start": {
@@ -2533,7 +2537,8 @@
       },
       "Distant Details": {
         "Pack": {
-          "Side": "Left"
+          "Side": "Left",
+          "Fill": "Y"
         },
         "NumberOfVerticallyStackedSettings": "4",
         "Settings": {
