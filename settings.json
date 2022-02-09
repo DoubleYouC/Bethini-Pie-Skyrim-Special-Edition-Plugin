@@ -8059,6 +8059,14 @@
       }
     },
     {
+      "name": "bFreebiesSeen",
+      "section": "General",
+      "type": "boolean",
+      "value": {
+        "default": 0
+      }
+    },
+    {
       "name": "bHealthRegenFromRacePlayerOnly",
       "section": "General",
       "type": "boolean",
