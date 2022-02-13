@@ -622,6 +622,7 @@
           "Reset to Default": {
             "preset id": "Default",
             "tooltip": "Resets your INI files to their default values.\n\nNote that not all settings will be set to their default values, as you probably don't want us to touch your screen resolution and mouse look sensitivity... that sorta thing ;)",
+            "tooltip_wrap_length": 250,
             "type": "preset"
           },
           "Apply Recommended Tweaks": {
