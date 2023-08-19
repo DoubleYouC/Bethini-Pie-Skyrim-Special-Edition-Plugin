@@ -6117,11 +6117,11 @@
         "Vanilla Medium": 500.0,
         "Vanilla High": 500.0,
         "Vanilla Ultra": 500.0,
-        "Bethini Poor": 1245.0,
-        "Bethini Low": 2490.0,
-        "Bethini Medium": 6225.0,
-        "Bethini High": 12450.0,
-        "Bethini Ultra": 19920.0
+        "Bethini Poor": 2048.0,
+        "Bethini Low": 4096.0,
+        "Bethini Medium": 10240.0,
+        "Bethini High": 26624.0,
+        "Bethini Ultra": 34816.0
       }
     },
     {
@@ -6263,10 +6263,10 @@
         "Vanilla Medium": 6000,
         "Vanilla High": 999999,
         "Vanilla Ultra": 999999,
-        "Bethini Poor": 2048,
-        "Bethini Low": 4096,
-        "Bethini Medium": 8192,
-        "Bethini High": 10240,
+        "Bethini Poor": 1024,
+        "Bethini Low": 2896,
+        "Bethini Medium": 4096,
+        "Bethini High": 6144,
         "Bethini Ultra": 12288
       }
     },
@@ -6283,9 +6283,9 @@
         "Vanilla High": 2844,
         "Vanilla Ultra": 2844,
         "Bethini Poor": 0,
-        "Bethini Low": 4096,
-        "Bethini Medium": 8192,
-        "Bethini High": 10240,
+        "Bethini Low": 2896,
+        "Bethini Medium": 4096,
+        "Bethini High": 6144,
         "Bethini Ultra": 12288
       }
     },
@@ -6303,8 +6303,8 @@
         "Vanilla Ultra": 999999,
         "Bethini Poor": 2048,
         "Bethini Low": 4096,
-        "Bethini Medium": 10240,
-        "Bethini High": 12288,
+        "Bethini Medium": 8192,
+        "Bethini High": 10240,
         "Bethini Ultra": 16384
       }
     },
@@ -6322,8 +6322,8 @@
         "Vanilla Ultra": 2048,
         "Bethini Poor": 0,
         "Bethini Low": 4096,
-        "Bethini Medium": 10240,
-        "Bethini High": 12288,
+        "Bethini Medium": 8192,
+        "Bethini High": 10240,
         "Bethini Ultra": 16384
       }
     },
@@ -6850,8 +6850,8 @@
         "Vanilla Ultra": 3600,
         "Bethini Poor": 0,
         "Bethini Low": 4096,
-        "Bethini Medium": 10240,
-        "Bethini High": 12288,
+        "Bethini Medium": 8192,
+        "Bethini High": 10240,
         "Bethini Ultra": 16384
       }
     },
@@ -14966,7 +14966,7 @@
         "Vanilla Ultra": 90000,
         "Bethini Poor": 24576,
         "Bethini Low": 32768,
-        "Bethini Medium": 49152,
+        "Bethini Medium": 81920,
         "Bethini High": 114688,
         "Bethini Ultra": 147456
       }
