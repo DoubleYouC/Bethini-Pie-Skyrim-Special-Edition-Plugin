@@ -62,8 +62,7 @@
     "iVSyncPresentInterval",
     "bUseTAA",
     "fMouseHeadingXScale",
-    "fMouseHeadingYScale",
-    "bAlwaysActive"
+    "fMouseHeadingYScale"
   ],
   "Default": "",
   "INIs": {
@@ -87,7 +86,7 @@
   "displayTabs": {
     "Setup": {
       "NoLabelFrame": {
-        
+
         "NumberOfVerticallyStackedSettings": "6",
         "Settings": {
           "Game Path": {
@@ -124,7 +123,7 @@
     },
     "Preferences": {
       "NoLabelFrame": {
-        
+
         "NumberOfVerticallyStackedSettings": "1",
         "Settings": {
           "Note: ": {
@@ -291,7 +290,6 @@
         }
       },
       "General": {
-        
         "NumberOfVerticallyStackedSettings": "6",
         "Settings": {
           "Max Backups to Keep": {
@@ -336,17 +334,34 @@
     },
     "Basic": {
       "Display": {
-        
-        "NumberOfVerticallyStackedSettings": "2",
+        "Pack": {
+          "Expand": 0,
+          "Fill": "None"
+        },
+        "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
           "Resolution": {
-            "choices": [ "FUNCCurrentResolution", "1920x1080", "1440x810", "1280x720", "800x450", "Manual..." ],
+            "choices": [ "FUNCCurrentResolution", "1280x720", "1366x768", "1440x900", "1600x900", "1680x1050", "1920x1200", "1920x1080", "2560x1080", "2560x1440", "2560x1600", "3440x1440", "3840x2160", "Manual..." ],
             "customWidth": "12",
             "delimiter": "x",
             "settings": [ "iSize W", "iSize H" ],
             "targetINIs": [ "SkyrimPrefs.ini", "SkyrimPrefs.ini" ],
             "targetSections": [ "Display", "Display" ],
             "tooltip": "Changes the resolution.",
+            "type": "Dropdown"
+          },
+          "Display Mode": {
+            "choices": [ "Fullscreen", "Borderless Windowed", "Windowed" ],
+            "customWidth": "12",
+            "settingChoices": {
+              "Fullscreen": [ "1", "0" ],
+              "Borderless Windowed": [ "0", "1" ],
+              "Windowed": [ "0", "0" ]
+            },
+            "settings": [ "bFull Screen", "bBorderless" ],
+            "targetINIs": [ "SkyrimPrefs.ini", "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display", "Display" ],
+            "tooltip": "Sets the display mode.",
             "type": "Dropdown"
           },
           "Antialiasing": {
@@ -365,46 +380,57 @@
             "tooltip": "Specifies the antialiasing (AA) applied to edges to make them smoother and less jagged.",
             "type": "Dropdown"
           },
-          "Field of View": {
-            "choices": [ "64.37", "74.12", "80", "96.42" ],
-            "customWidth": "11",
+
+          "Default World FOV": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "1",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
             "settings": [ "fDefaultWorldFOV" ],
             "targetINIs": [ "Skyrim.ini" ],
             "targetSections": [ "Display" ],
-            "tooltip": "Changes the default field of view (FOV). This will only take effect on new saves.",
-            "type": "Combobox",
-            "validate": "float",
-            "width": "12"
+            "to": "120",
+            "tooltip": "Sets the default world field of view.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
           },
-          "Havok FPS": {
-            "customWidth": "11",
+          "Default FOV": {
+            "customWidth": "22",
             "decimal places": "0",
-            "entryWidth": "5",
-            "formula": "1/{}",
-            "settings": [ "fMaxTime" ],
+            "digits": "3",
+            "from": "1",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "fDefaultFOV" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "HAVOK" ],
-            "tooltip": "Sets the maximum framerate supported by game physics.",
-            "type": "Entry",
-            "validate": "counting"
-          },
-          "Windowed Mode": {
-            "Offvalue": [ [ "1" ] ],
-            "Onvalue": [ [ "0" ] ],
-            "settings": [ "bFull Screen" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
             "targetSections": [ "Display" ],
-            "tooltip": "Toggles windowed/fullscreen mode.",
-            "type": "Checkbutton"
+            "to": "120",
+            "tooltip": "Sets the default field of view.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
           },
-          "Borderless": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bBorderless" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
+          "Default 1st Person FOV": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "1",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "fDefault1stPersonFOV" ],
+            "targetINIs": [ "Skyrim.ini" ],
             "targetSections": [ "Display" ],
-            "tooltip": "Toggles the window border.",
-            "type": "Checkbutton"
+            "to": "120",
+            "tooltip": "Sets the default 1st person field of view.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
           },
           "Always Active": {
             "Offvalue": [ [ "0" ] ],
@@ -434,22 +460,6 @@
             "tooltip": "Toggles vertical synchronization (VSync), which removes screen tearing.",
             "type": "Checkbutton"
           },
-          "Half Hertz": {
-            "dependentSettings": {
-              "VSync": {
-                "setToOff": "1",
-                "operator": "equal",
-                "value": [ [ "1", "2" ] ]
-              }
-            },
-            "Offvalue": [ [ "1", "0" ] ],
-            "Onvalue": [ [ "2" ] ],
-            "settings": [ "iVSyncPresentInterval" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Toggles vertical synchronization (VSync), which removes screen tearing, at half your screen's refresh rate.",
-            "type": "Checkbutton"
-          },
           "Lock Frame Rate": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
@@ -458,152 +468,25 @@
             "targetSections": [ "Display" ],
             "tooltip": "Toggles the ability for the game to lock the frame rate to 60 frames per second.",
             "type": "Checkbutton"
-          }
-        }
-      },
-      "Decals": {
-        "Pack": {
-          "Side": "Left"
-        },
-        "NumberOfVerticallyStackedSettings": "8",
-        "Settings": {
-          "Decals": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bDecals" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Decals" ],
-            "tooltip": "Toggles decals (mostly blood effects).",
-            "type": "Checkbutton"
           },
-          "Disable Gore": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bDisableAllGore" ],
+          "Havok FPS": {
+            "decimal places": "0",
+            "entryWidth": "5",
+            "formula": "1/{}",
+            "settings": [ "fMaxTime" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "General" ],
-            "tooltip": "Toggles gory effects, such as blood.",
-            "type": "Checkbutton"
-          },
-          "Max Decals Per Frame": {
-            "customWidth": "30",
-            "decimal places": "0",
-            "digits": "3",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "1",
-            "settings": [ "iMaxDecalsPerFrame" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "250",
-            "tooltip": "Sets the maximum number of decals that can be shown per frame.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Decals": {
-                "operator": "equal",
-                "value": [ [ "1" ] ]
-              }
-            }
-          },
-          "Max Skinned Decals": {
-            "customWidth": "30",
-            "decimal places": "0",
-            "digits": "3",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "1",
-            "settings": [ "uMaxSkinDecals" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Decals" ],
-            "to": "100",
-            "tooltip": "Sets the maximum number of skinned decals.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Decals": {
-                "operator": "equal",
-                "value": [ [ "1" ] ]
-              }
-            }
-          },
-          "Max Skinned Decals Per Frame": {
-            "customWidth": "30",
-            "decimal places": "0",
-            "digits": "3",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "1",
-            "settings": [ "iMaxSkinDecalsPerFrame" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "100",
-            "tooltip": "Sets the maximum number of skinned decals that can be shown per frame.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Decals": {
-                "operator": "equal",
-                "value": [ [ "1" ] ]
-              }
-            }
-          },
-          "Max Skinned Decals Per Actor": {
-            "customWidth": "30",
-            "decimal places": "0",
-            "digits": "2",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "1",
-            "settings": [ "uMaxSkinDecalPerActor" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Decals" ],
-            "to": "60",
-            "tooltip": "Sets the maximum number of skinned decals per actor.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Decals": {
-                "operator": "equal",
-                "value": [ [ "1" ] ]
-              }
-            }
-          },
-          "Decal Lifetime": {
-            "customWidth": "30",
-            "decimal places": "0",
-            "digits": "3",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "1",
-            "settings": [ "fDecalLifetime" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "300",
-            "tooltip": "Sets the time in seconds that some decals will stay visible.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Decals": {
-                "operator": "equal",
-                "value": [ [ "1" ] ]
-              }
-            }
+            "targetSections": [ "HAVOK" ],
+            "tooltip": "Sets the maximum framerate supported by game physics.",
+            "type": "Entry",
+            "validate": "counting"
           }
         }
       },
       "Presets": {
-        
+        "Pack": {
+          "Expand": 0,
+          "Fill": "None"
+        },
         "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
           "Reset to Default": {
@@ -667,9 +550,10 @@
       },
       "Adjustments": {
         "Pack": {
-          "Side": "Left"
+          "Expand": 0,
+          "Fill": "None"
         },
-        "NumberOfVerticallyStackedSettings": "5",
+        "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
           "Gamma": {
             "customWidth": "15",
@@ -758,77 +642,24 @@
           }
         }
       },
-      "Effects": {
-        
-        "NumberOfVerticallyStackedSettings": "2",
+      "NoLabelFrame": {
+        "NumberOfVerticallyStackedSettings": "1",
         "Settings": {
-          "Particles": {
-            "choices": [ "250", "750", "1500", "3000", "4500", "6000", "8000", "10000" ],
-            "decimal places": "0",
-            "settings": [ "iMaxDesired" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Particles" ],
-            "tooltip": "Sets the amount of particle effects.",
-            "type": "Combobox",
-            "validate": "whole",
-            "width": "12"
-          },
-          "Depth of Field": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bDoDepthOfField" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Imagespace" ],
-            "tooltip": "Toggles depth of field (DOF), a kind of blurring to imitate the human eye's perception. This is most noticeable under water, reducing visibility to realistic levels (it looks clear otherwise).",
-            "type": "Checkbutton"
-          },
-          "Lens Flare": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bLensFlare" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Imagespace" ],
-            "tooltip": "Toggles lens flare.",
-            "type": "Checkbutton"
-          },
-          "Anamorphic Lens Flare": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bIBLFEnable" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Toggles the horizontal lens flare effect most commonly associated with anamorphic lenses.",
-            "type": "Checkbutton"
-          }
-        }
-      },
-      "Godrays": {
-        "Pack": {
-          "Side": "Left"
-        },
-        "NumberOfVerticallyStackedSettings": "2",
-        "Settings": {
-          "Godrays": {
-            "choices": [ "None", "Low", "Medium", "High" ],
-            "settingChoices": {
-              "None": [ "0", "0" ],
-              "Low": [ "1", "0" ],
-              "Medium": [ "1", "1" ],
-              "High": [ "1", "2" ]
-            },
-            "settings": [ "bVolumetricLightingEnable", "iVolumetricLightingQuality" ],
-            "targetINIs": [ "SkyrimPrefs.ini", "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display", "Display" ],
-            "tooltip": "Sets Godrays (volumetric lighting) quality.",
+          "Subtitle Language": {
+            "choices": [ "ENGLISH", "FRENCH", "ITALIAN", "GERMAN", "SPANISH", "POLISH", "CHINESE", "RUSSIAN", "JAPANESE", "Manual..." ],
+            "settings": [ "sLanguage" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "General" ],
+            "tooltip": "Sets the language used for subtitles.",
             "type": "Dropdown"
           },
-          "Interior Godrays": {
-            "Offvalue": [ [ "1" ] ],
-            "Onvalue": [ [ "0" ] ],
-            "settings": [ "bVolumetricLightingDisableInterior" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Toggles Godrays in interiors. This may cause interiors to become overly bright in some cases.",
+          "Freebies Seen": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bFreebiesSeen" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "General" ],
+            "tooltip": "Toggles the pop-up to download the Creation Club Content.",
             "type": "Checkbutton"
           }
         }
@@ -844,6 +675,7 @@
         },
         "NumberOfVerticallyStackedSettings": "1",
         "Settings": {
+
           "Intro Logos": {
             "Offvalue": [ [ "" ] ],
             "Onvalue": [ [ "BGS_Logo.bik" ] ],
@@ -862,18 +694,48 @@
             "tooltip": "Toggles the game intro music.",
             "type": "Checkbutton"
           },
-          "Remove Borders": {
+          
+          "Show Markers": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bShowMarkers" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles markers useful for modders. Do NOT use for actual gameplay'",
+            "type": "Checkbutton"
+          },
+          
+          "Max Cached Sound Size": {
+            "choices": [ "4096", "262144" ],
+            "settings": [ "uMaxSizeForCachedSound" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Audio" ],
+            "tooltip": "Sets the maximum size for cached sound.",
+            "type": "Combobox",
+            "validate": "counting",
+            "width": "8"
+          }
+        }
+      },
+      "Saved Games": {
+        "Pack": {
+          "Fill": "None",
+          "Expand": 0
+        },
+        "NumberOfVerticallyStackedSettings": "2",
+        "Settings": {
+          "Autosaves": {
             "Offvalue": [ [ "1" ] ],
             "Onvalue": [ [ "0" ] ],
-            "settings": [ "bBorderRegionsEnabled" ],
+            "settings": [ "bDisableAutoSave" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "General" ],
-            "tooltip": "Toggles off the borders at the edges of the map.",
+            "targetSections": [ "SaveGame" ],
+            "tooltip": "Toggles autosaves.",
             "type": "Checkbutton"
           },
           "Max Autosaves": {
             "decimal places": "0",
-            "from": "0",
+            "from": "1",
             "increment": "1",
             "settings": [ "iAutoSaveCount" ],
             "targetINIs": [ "Skyrim.ini" ],
@@ -883,95 +745,113 @@
             "type": "Spinbox",
             "validate": "whole",
             "width": "5"
-          }
-        }
-      },
-      "Gameplay": {
-        "Pack": {
-          "Side": "Left",
-          "Anchor": "NW",
-          "Fill": "None",
-          "Expand": 0
-        },
-        "NumberOfVerticallyStackedSettings": "7",
-        "Settings": {
-          "Always Run by Default": {
+          },
+          "Save on Pause": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
-            "settings": [ "bAlwaysRunByDefault" ],
+            "settings": [ "bSaveOnPause" ],
             "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Controls" ],
-            "tooltip": "Toggles the ability of the character to always run by default. If turned off, you can still run, but walking is the default action.",
+            "targetSections": [ "MAIN" ],
+            "tooltip": "Toggles autosaves made upon closing certain menus that pause the game.",
             "type": "Checkbutton"
           },
-          "NPCs Use Ammo": {
+
+          "Save on Pause Timer": {
+            "decimal places": "0",
+            "from": "1",
+            "increment": "1",
+            "settings": [ "fAutosaveEveryXMins" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "SaveGame" ],
+            "to": "100",
+            "tooltip": "Sets the timer to make a new autosave upon closing certain menus that pause the game.",
+            "type": "Spinbox",
+            "validate": "float",
+            "dependentSettings": {
+              "Save on Pause": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            },
+            "width": "5"
+          },
+          "Save on Travel": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
-            "settings": [ "bForceNPCsUseAmmo" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Combat" ],
-            "tooltip": "Toggles off unlimited NPC ammo. If enabled, NPCs will no longer have access to unlimited ammo, but shall be forced to only use the ammo they possess.",
+            "settings": [ "bSaveOnTravel" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "MAIN" ],
+            "tooltip": "Toggles autosaves made after traveling to different locations.",
             "type": "Checkbutton"
           },
-          "Disable Combat Dialogue": {
+          "Save on Rest": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
-            "settings": [ "bDisableCombatDialogue" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Combat" ],
-            "tooltip": "Toggles off those cheeky comments that enemies say while in combat.",
+            "settings": [ "bSaveOnRest" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "MAIN" ],
+            "tooltip": "Toggles autosaves made after sleeping.",
             "type": "Checkbutton"
           },
-          "1st Person Arrow Tilt-up Angle": {
-            "customWidth": "30",
-            "entryWidth": "5",
-            "settings": [ "f1PArrowTiltUpAngle" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Combat" ],
-            "tooltip": "Sets the upward tilt angle of arrows in 1st-person view.",
-            "type": "Entry",
-            "validate": "float"
+          "Save on Wait": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bSaveOnWait" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "MAIN" ],
+            "tooltip": "Toggles autosaves made after waiting.",
+            "type": "Checkbutton"
           },
-          "3rd Person Arrow Tilt-up Angle": {
-            "customWidth": "30",
-            "entryWidth": "5",
-            "settings": [ "f3PArrowTiltUpAngle" ],
+          "Missing Content Warning": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bDisplayMissingContentDialogue" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Combat" ],
-            "tooltip": "Sets the upward tilt angle of arrows in 3rd-person view.",
-            "type": "Entry",
-            "validate": "float"
+            "targetSections": [ "SaveGame" ],
+            "tooltip": "Toggles the missing content warning when loading a saved game missing a previously enabled plugin.",
+            "type": "Checkbutton"
           },
-          "1st Person Bolt Tilt-up Angle": {
-            "customWidth": "30",
-            "entryWidth": "5",
-            "settings": [ "f1PBoltTiltUpAngle" ],
+
+          "Scripted Autosaves": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bAllowScriptedAutosave" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Combat" ],
-            "tooltip": "Sets the upward tilt angle of crossbow bolts in 1st-person view.",
-            "type": "Entry",
-            "validate": "float"
+            "targetSections": [ "SaveGame" ],
+            "tooltip": "Toggles scripted autosaves.",
+            "type": "Checkbutton"
           },
-          "Over-Encumbered Reminder": {
-            "customWidth": "30",
-            "entryWidth": "7",
-            "settings": [ "fEncumberedReminderTimer" ],
+          "Scripted Force Saves": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bAllowScriptedForceSave" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "General" ],
-            "tooltip": "Sets the time interval between subsequent \"You are carrying too much to be able to run\" messages in seconds.",
-            "type": "Entry",
-            "validate": "float"
+            "targetSections": [ "SaveGame" ],
+            "tooltip": "Toggles scripted force saves.",
+            "type": "Checkbutton"
+          },
+          "Compression": {
+            "choices": [ "None", "ZLIB", "LZ4" ],
+            "settingChoices": {
+              "None": [ "0" ],
+              "ZLIB": [ "1" ],
+              "LZ4": [ "2" ]
+            },
+            "settings": [ "uiCompression" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "SaveGame" ],
+            "tooltip": "Sets the type of compression used on the save game file.",
+            "type": "Dropdown"
           }
         }
       },
       "Papyrus": {
         "Pack": {
-          "Side": "Top",
-          "Anchor": "NW",
+          "Side": "Left",
           "Fill": "None",
           "Expand": 0
         },
-        "NumberOfVerticallyStackedSettings": "2",
+        "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
           "Post-Load Update Time": {
             "choices": [ "500", "2000" ],
@@ -985,14 +865,17 @@
             "validate": "whole",
             "width": "8"
           },
-          "Background Load Scripting VM": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bBackgroundLoadVMData" ],
+          "Max Allocated Memory": {
+            "choices": [ "153600", "300000", "500000" ],
+            "customWidth": "20",
+            "decimal places": "0",
+            "settings": [ "iMaxAllocatedMemoryBytes" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "General" ],
-            "tooltip": "Toggles loading the scripting data in the VM in the background. May improve performance, but there is currently no data. Skyrim and Skyrim Special Edition defaults it to off, while Fallout 4 defaults it to on.",
-            "type": "Checkbutton"
+            "targetSections": [ "Papyrus" ],
+            "tooltip": "Sets the maximum memory that Papyrus can hold at a time.",
+            "type": "Combobox",
+            "validate": "whole",
+            "width": "8"
           },
           "Logging": {
             "Offvalue": [ [ "0" ] ],
@@ -1034,8 +917,6 @@
       },
       "Screenshots": {
         "Pack": {
-          "Side": "Left",
-          "Anchor": "NW",
           "Fill": "None",
           "Expand": 0
         },
@@ -1080,6 +961,229 @@
         }
       }
     },
+    "Gameplay": {
+      "NoLabelFrame": {
+        "Pack": {
+          "Fill": "None",
+          "Expand": 0
+        },
+        "NumberOfVerticallyStackedSettings": "12",
+        "Settings": {
+          "Difficulty": {
+            "choices": [ "Very Easy", "Easy", "Normal", "Hard", "Very Hard", "Survival" ],
+            "settingChoices": {
+              "Very Easy": [ "0" ],
+              "Easy": [ "1" ],
+              "Normal": [ "2" ],
+              "Hard": [ "3" ],
+              "Very Hard": [ "4" ],
+              "Survival": [ "5" ]
+            },
+            "settings": [ "iDifficulty" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "GamePlay" ],
+            "tooltip": "Sets the difficulty level.",
+            "type": "Dropdown"
+          },
+          "Always Drive Ragdoll": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bAlwaysDriveRagdoll" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Animation" ],
+            "tooltip": "Toggles always drive ragdoll. This makes ragdolls more animated when bumped.",
+            "type": "Checkbutton"
+          },
+          "Always Run by Default": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bAlwaysRunByDefault" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Controls" ],
+            "tooltip": "Toggles the ability of the character to always run by default. If turned off, you can still run, but walking is the default action.",
+            "type": "Checkbutton"
+          },
+          "Combat Dialogue": {
+            "Offvalue": [ [ "1" ] ],
+            "Onvalue": [ [ "0" ] ],
+            "settings": [ "bDisableCombatDialogue" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Combat" ],
+            "tooltip": "Toggles those cheeky comments that enemies say while in combat.",
+            "type": "Checkbutton"
+          },
+          "Hit Recoil": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bEnableHavokHit" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Animation" ],
+            "tooltip": "Toggles hit recoil. Actors respond to being punched.",
+            "type": "Checkbutton"
+          },
+          "NPCs Use Ammo": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bForceNPCsUseAmmo" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Combat" ],
+            "tooltip": "Toggles off unlimited NPC ammo. If enabled, NPCs will no longer have access to unlimited ammo, but shall be forced to only use the ammo they possess.",
+            "type": "Checkbutton"
+          },
+
+          "Remove Borders": {
+            "Offvalue": [ [ "1" ] ],
+            "Onvalue": [ [ "0" ] ],
+            "settings": [ "bBorderRegionsEnabled" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "General" ],
+            "tooltip": "Toggles off the borders at the edges of the map.",
+            "type": "Checkbutton"
+          },
+          "Tutorials": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bShowTutorials" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Interface" ],
+            "tooltip": "Toggles the in-game tutorial pop-ups.",
+            "type": "Checkbutton"
+          },
+          "": "",
+          "emptylabel1": "",
+          "emptylabel2": "",
+          "emptylabel3": "",
+          "1st Person Arrow Tilt-up Angle": {
+            "customWidth": "30",
+            "choices": [ "0.7", "1.0" ],
+            "settings": [ "f1PArrowTiltUpAngle" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Combat" ],
+            "tooltip": "Sets the upward tilt angle of arrows in 1st-person view.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "3rd Person Arrow Tilt-up Angle": {
+            "customWidth": "30",
+            "choices": [ "0.7", "1.0" ],
+            "settings": [ "f3PArrowTiltUpAngle" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Combat" ],
+            "tooltip": "Sets the upward tilt angle of arrows in 3rd-person view.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "1st Person Bolt Tilt-up Angle": {
+            "customWidth": "30",
+            "choices": [ "0.7", "1.0" ],
+            "settings": [ "f1PBoltTiltUpAngle" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Combat" ],
+            "tooltip": "Sets the upward tilt angle of crossbow bolts in 1st-person view.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "Max Arrow Range": {
+            "customWidth": "30",
+            "choices": [ "4096", "8192", "12288", "16384" ],
+            "settings": [ "fVisibleNavmeshMoveDist" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Actor" ],
+            "tooltip": "Sets the maximum distance that arrows can hit actors.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "Hit Recoil Multiplier": {
+            "decimal places": "0",
+            "customWidth": "30",
+            "dependentSettings": {
+              "Hit Recoil": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            },
+            "digits": "3",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "fHavokHitImpulseMult" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Animation" ],
+            "to": "200",
+            "tooltip": "Sets the hit recoil multiplier.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Weapon Change Clear Time": {
+            "decimal places": "2",
+            "customWidth": "30",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": ".01",
+            "settings": [ "fWeaponChangeClearTime" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Animation" ],
+            "to": "1",
+            "tooltip": "Sets the weapon change clear time.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Over-Encumbered Reminder": {
+            "customWidth": "30",
+            "choices": [ "30", "300", "3600" ],
+            "settings": [ "fEncumberedReminderTimer" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "General" ],
+            "tooltip": "Sets the time interval between subsequent \"You are carrying too much to be able to run\" messages in seconds.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "Landscape Friction": {
+            "customWidth": "30",
+            "choices": [ "2.5", "32" ],
+            "settings": [ "fLandFriction" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Landscape" ],
+            "tooltip": "Sets the landscape friction.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "Book Open Time": {
+            "customWidth": "30",
+            "choices": [ "50", "500", "1000" ],
+            "settings": [ "fBookOpenTime" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Interface" ],
+            "tooltip": "Sets the time in milliseconds it takes to open books. 50 appears to be the minimum amount for you to still be able to read the book, but might vary.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          },
+          "Horse Dismount Delay": {
+            "customWidth": "30",
+            "choices": [ "0", "250", "500" ],
+            "settings": [ "iHorseTransitionMillis" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Camera" ],
+            "tooltip": "Sets the time in milliseconds it takes for the camera to readjust after dismounting a horse.",
+            "type": "Combobox",
+            "validate": "float",
+            "width": "8"
+          }
+        }
+      }
+    },
     "Interface": {
       "NoLabelFrame": {
         "Pack": {
@@ -1088,8 +1192,16 @@
           "Fill": "None",
           "Expand": 0
         },
-        "NumberOfVerticallyStackedSettings": "2",
+        "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
+          "Subtitle Speaker Name Color": {
+            "colorValueType": "decimal",
+            "settings": [ "iSubtitleSpeakerNameColor" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Interface" ],
+            "tooltip": "Sets the subtitle text color of the name of the person speaking.",
+            "type": "Color"
+          },
           "Dialogue Subtitles": {
             "tooltip": "Toggles subtitles for NPCs who are directly talking to you.",
             "type": "Checkbutton",
@@ -1126,26 +1238,16 @@
             "targetSections": [ "General" ],
             "settings": [ "bModManagerMenuEnabled" ]
           },
-          "Show Quest Markers": {
-            "tooltip": "Toggles quest markers on the map and the compass.",
+          "Controller Vibration": {
+            "tooltip": "Toggles controller vibration.",
             "type": "Checkbutton",
             "Onvalue": [ [ "1" ] ],
             "Offvalue": [ [ "0" ] ],
             "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "GamePlay" ],
-            "settings": [ "bShowQuestMarkers" ]
-          },
-          "Show Compass": {
-            "tooltip": "Toggles the compass.",
-            "type": "Checkbutton",
-            "Onvalue": [ [ "1" ] ],
-            "Offvalue": [ [ "0" ] ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Interface" ],
-            "settings": [ "bShowCompass" ]
+            "targetSections": [ "Controls" ],
+            "settings": [ "bGamePadRumble" ]
           },
           "Max Custom Name Length": {
-            "customWidth": "25",
             "decimal places": "0",
             "from": "1",
             "increment": "1",
@@ -1158,102 +1260,67 @@
             "validate": "whole",
             "width": "3"
           },
-          "Subtitle Speaker Name Color": {
-            "colorValueType": "decimal",
-            "customWidth": "25",
-            "settings": [ "iSubtitleSpeakerNameColor" ],
-            "targetINIs": [ "Skyrim.ini" ],
+
+          "Crosshair": {
+            "tooltip": "Toggles the crosshair.",
+            "type": "Checkbutton",
+            "Onvalue": [ [ "1" ] ],
+            "Offvalue": [ [ "0" ] ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "MAIN" ],
+            "settings": [ "bCrosshairEnabled" ]
+          },
+          "Compass": {
+            "tooltip": "Toggles the compass.",
+            "type": "Checkbutton",
+            "Onvalue": [ [ "1" ] ],
+            "Offvalue": [ [ "0" ] ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
             "targetSections": [ "Interface" ],
-            "tooltip": "Sets the subtitle text color of the name of the person speaking.",
-            "type": "Color"
-          }
-        }
-      },
-      "Map Menu": {
-        "Pack": {
-          "Side": "Left",
-          "Anchor": "NW",
-          "Fill": "None",
-          "Expand": 0
-        },
-        "NumberOfVerticallyStackedSettings": "4",
-        "Settings": {
-          "Fix Map Menu Navigation": {
-            "Offvalue": [
-              [ "75" ],
-              [ "15" ],
-              [ "80" ]
-            ],
-            "Onvalue": [
-              [ "90" ],
-              [ "0" ],
-              [ "400" ]
-            ],
-            "settings": [ "fMapWorldMaxPitch", "fMapWorldMinPitch", "fMapWorldYawRange" ],
-            "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini" ],
-            "targetSections": [ "MapMenu", "MapMenu", "MapMenu" ],
-            "tooltip": "Unlocks the map menu navigation so that when the right mouse button is held, the camera can move more freely.",
-            "type": "Checkbutton"
+            "settings": [ "bShowCompass" ]
           },
-          "Remove Map Blur": {
-            "Offvalue": [
-              [ "0" ],
-              [ "0.3000000119" ],
-              [ "0.4499999881" ],
-              [ "4" ]
-            ],
-            "Onvalue": [
-              [ "1" ],
-              [ "0" ],
-              [ "0" ],
-              [ "0" ]
-            ],
-            "settings": [ "bWorldMapNoSkyDepthBlur", "fWorldMapDepthBlurScale", "fWorldMapMaximumDepthBlur", "fWorldMapNearDepthBlurScale" ],
-            "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini", "Skyrim.ini" ],
-            "targetSections": [ "MapMenu", "MapMenu", "MapMenu", "MapMenu" ],
-            "tooltip": "Unlocks the map menu navigation so that when the right mouse button is held, the camera can move more freely.",
-            "type": "Checkbutton"
+          "HUD Opacity": {
+            "decimal places": "2",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fHUDOpacity" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "MAIN" ],
+            "to": "1",
+            "tooltip": "Sets HUD opacity.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
           },
-          "Object LOD": {
-            "choices": [ "4", "8", "16", "32" ],
-            "customWidth": "11",
-            "settingChoices": {
-              "4": [ "4" ],
-              "8": [ "8" ],
-              "16": [ "16" ],
-              "32": [ "32" ]
-            },
-            "settings": [ "uLockedObjectMapLOD" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "MapMenu" ],
-            "tooltip": "Specifies the object LOD level used on the map menu.\n\nWarning! This can cause CTDs/ILS in some cases! Change at your own risk.",
-            "type": "Dropdown"
+          "Quest Markers": {
+            "tooltip": "Toggles quest markers on the map and the compass.",
+            "type": "Checkbutton",
+            "Onvalue": [ [ "1" ] ],
+            "Offvalue": [ [ "0" ] ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "GamePlay" ],
+            "settings": [ "bShowQuestMarkers" ]
           },
-          "Terrain LOD": {
-            "choices": [ "4", "8", "16", "32" ],
-            "customWidth": "11",
-            "settingChoices": {
-              "4": [ "4" ],
-              "8": [ "8" ],
-              "16": [ "16" ],
-              "32": [ "32" ]
-            },
-            "settings": [ "uLockedTerrainLOD" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "MapMenu" ],
-            "tooltip": "Specifies the terrain LOD level used on the map menu.\n\nWarning! This can cause CTDs/ILS in some cases! Change at your own risk.",
-            "type": "Dropdown"
+          "Floating Quest Markers": {
+            "tooltip": "Toggles floating quest markers on items and characters.",
+            "type": "Checkbutton",
+            "Onvalue": [ [ "1" ] ],
+            "Offvalue": [ [ "0" ] ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "GamePlay" ],
+            "settings": [ "bShowFloatingQuestMarkers" ]
           }
         }
       },
       "Console": {
         "Pack": {
-          "Side": "Left",
-          "Anchor": "NW",
           "Fill": "None",
           "Expand": 0
         },
-        "NumberOfVerticallyStackedSettings": "4",
+        "NumberOfVerticallyStackedSettings": "1",
         "Settings": {
           "Screen Percentage": {
             "customWidth": "16",
@@ -1301,6 +1368,105 @@
           }
         }
       },
+      "Map Menu": {
+        "Pack": {
+          "Side": "Left",
+          "Anchor": "NW",
+          "Fill": "None",
+          "Expand": 0
+        },
+        "NumberOfVerticallyStackedSettings": "6",
+        "Settings": {
+          "Unlock Map Menu Navigation": {
+            "Offvalue": [
+              [ "75" ],
+              [ "15" ],
+              [ "80" ]
+            ],
+            "Onvalue": [
+              [ "90" ],
+              [ "0" ],
+              [ "400" ]
+            ],
+            "settings": [ "fMapWorldMaxPitch", "fMapWorldMinPitch", "fMapWorldYawRange" ],
+            "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini" ],
+            "targetSections": [ "MapMenu", "MapMenu", "MapMenu" ],
+            "tooltip": "Unlocks the map menu navigation so that when the right mouse button is held, the camera can move more freely.",
+            "type": "Checkbutton"
+          },
+          "Remove Map Blur": {
+            "Offvalue": [
+              [ "0" ],
+              [ "0.3000000119" ],
+              [ "0.4499999881" ],
+              [ "4" ]
+            ],
+            "Onvalue": [
+              [ "1" ],
+              [ "0" ],
+              [ "0" ],
+              [ "0" ]
+            ],
+            "settings": [ "bWorldMapNoSkyDepthBlur", "fWorldMapDepthBlurScale", "fWorldMapMaximumDepthBlur", "fWorldMapNearDepthBlurScale" ],
+            "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini", "Skyrim.ini" ],
+            "targetSections": [ "MapMenu", "MapMenu", "MapMenu", "MapMenu" ],
+            "tooltip": "Unlocks the map menu navigation so that when the right mouse button is held, the camera can move more freely.",
+            "type": "Checkbutton"
+          },
+          "Map Brightness Boost": {
+            "customWidth": "20",
+            "decimal places": "3",
+            "digits": "4",
+            "from": "-1",
+            "increment": "0.001",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fGlobalMapBrightnessBoost" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the global brightness boost modifier for the map.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Map Contrast Boost": {
+            "customWidth": "20",
+            "decimal places": "3",
+            "digits": "4",
+            "from": "-1",
+            "increment": "0.001",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fGlobalMapContrastBoost" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the global contrast boost modifier for the map.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Map Bloom Boost": {
+            "customWidth": "20",
+            "decimal places": "3",
+            "digits": "4",
+            "from": "-1",
+            "increment": "0.001",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fGlobalMapBloomThresholdBoost" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the global bloom threshold boost modifier for the map.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          }
+        }
+      },
+
       "Mouse Settings": {
         "Pack": {
           "Side": "Top",
@@ -1310,13 +1476,13 @@
         },
         "NumberOfVerticallyStackedSettings": "6",
         "Settings": {
-          "Background Mouse": {
+          "Invert Y": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
-            "settings": [ "bBackgroundMouse" ],
-            "targetINIs": [ "Skyrim.ini" ],
+            "settings": [ "bInvertYValues" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
             "targetSections": [ "Controls" ],
-            "tooltip": "Allows the mouse to move using the default system speed. While generally too buggy for actual gameplay, it can be useful while tweaking ENB in-game settings.",
+            "tooltip": "Toggles the ability of the the mouse to be inverted over the y-axis (up and down movement).",
             "type": "Checkbutton"
           },
           "Look Sensitivity": {
@@ -1386,8 +1552,12 @@
         }
       }
     },
-    "Visuals": {
+    "Environment": {
       "Snow": {
+        "Pack": {
+          "Expand": 0,
+          "Fill": "None"
+        },
         "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
           "Projected UV Diffuse Normals": {
@@ -1552,7 +1722,7 @@
             "width": "7"
           },
           "Rim Lighting Intensity": {
-            "customWidth": "25",
+            "customWidth": "27",
             "decimal places": "3",
             "dependentSettings": {
               "Rim Lighting": {
@@ -1579,7 +1749,7 @@
             "width": "7"
           },
           "Rim Lighting Geometry Power": {
-            "customWidth": "25",
+            "customWidth": "27",
             "decimal places": "2",
             "dependentSettings": {
               "Rim Lighting": {
@@ -1606,7 +1776,7 @@
             "width": "7"
           },
           "Rim Lighting Landscape": {
-            "customWidth": "25",
+            "customWidth": "27",
             "decimal places": "2",
             "dependentSettings": {
               "Rim Lighting": {
@@ -1634,243 +1804,13 @@
           }
         }
       },
-      "Shadows": {
+      "Grass": {
         "Pack": {
           "Side": "Left",
-          "Fill": "X"
+          "Expand": 0,
+          "Fill": "None"
         },
-        "NumberOfVerticallyStackedSettings": "7",
-        "Settings": {
-          "Sun-Shadow Transitions": {
-            "Offvalue": [ [ "1" ] ],
-            "Onvalue": [ [ "0" ] ],
-            "settings": [ "bDisableShadowJumps" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "If enabled, shadows will move according to the sun-shadow update settings rather than constantly moving with the sun.\n\nWarning! This may cause blinking shadows.",
-            "type": "Checkbutton"
-          },
-          "Sun-Shadow Update Time": {
-            "customWidth": "27",
-            "dependentSettings": {
-              "Sun-Shadow Transitions": {
-                "operator": "equal",
-                "value": [ [ "0" ] ]
-              }
-            },
-            "entryWidth": "5",
-            "settings": [ "fSunShadowUpdateTime" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Sets the speed of sun-shadow transitions in seconds.",
-            "type": "Entry",
-            "validate": "float"
-          },
-          "Sun-Shadow Update Threshold": {
-            "customWidth": "27",
-            "dependentSettings": {
-              "Sun-Shadow Transitions": {
-                "operator": "equal",
-                "value": [ [ "0" ] ]
-              }
-            },
-            "entryWidth": "5",
-            "settings": [ "fSunUpdateThreshold" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Sets the time between sun-shadow transitions.",
-            "type": "Entry",
-            "validate": "float"
-          },
-          "Shadow Resolution": {
-            "choices": [ "256", "512", "1024", "2048", "4096", "8192", "16384" ],
-            "customWidth": "27",
-            "decimal places": "0",
-            "dependentSettings": {
-              "Remove Shadows": {
-                "operator": "not-equal",
-                "value": [
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0.0001" ],
-                  [ "1" ]
-                ]
-              }
-            },
-            "settings": [ "iShadowMapResolution" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Sets the resolution of shadows.",
-            "type": "Combobox",
-            "validate": "integer",
-            "width": "8"
-          },
-          "Shadow Bias": {
-            "choices": [ "0.15", "0.25", "0.3", "0.47", "0.5", "1.0" ],
-            "customWidth": "27",
-            "dependentSettings": {
-              "Remove Shadows": {
-                "operator": "not-equal",
-                "value": [
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0.0001" ],
-                  [ "1" ]
-                ]
-              }
-            },
-            "settings": [ "fShadowDirectionalBiasScale" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Sets the directional bias of the shadows applied to surfaces. Low values reduce peter-panning (detached shadows), but cause more shadow acne (AKA shadow striping).",
-            "type": "Combobox",
-            "validate": "float",
-            "width": "8"
-          },
-          "Detailed Draw Distance": {
-            "choices": [ "1086", "1991", "2896", "3620", "4706", "5611" ],
-            "customWidth": "27",
-            "decimal places": "0",
-            "dependentSettings": {
-              "Remove Shadows": {
-                "operator": "not-equal",
-                "value": [
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0.0001" ],
-                  [ "1" ]
-                ]
-              }
-            },
-            "settings": [ "fFirstSliceDistance" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Sets the detailed draw distance (the shadows closest to your character).",
-            "type": "Combobox",
-            "validate": "whole",
-            "width": "8"
-          },
-          "Exterior Draw Distance": {
-            "choices": [ "1810", "2715", "3620", "4525", "5430", "7240", "8145", "10860", "12670", "14118" ],
-            "customWidth": "27",
-            "decimal places": "0",
-            "dependentSettings": {
-              "Remove Shadows": {
-                "operator": "not-equal",
-                "value": [
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0.0001" ],
-                  [ "1" ]
-                ]
-              }
-            },
-            "settings": [ "fShadowDistance" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Sets the exterior shadow distance.",
-            "type": "Combobox",
-            "validate": "whole",
-            "width": "8"
-          },
-
-          "Remove Shadows": {
-            "Offvalue": [
-              [ "1" ],
-              [ "5000" ],
-              [ "Detailed Draw Distance" ],
-              [ "Land Shadows" ],
-              [ "Tree Shadows" ],
-              [ "Exterior Draw Distance" ],
-              [ "Shadow Resolution" ]
-            ],
-            "Onvalue": [
-              [ "0" ],
-              [ "0" ],
-              [ "0" ],
-              [ "0" ],
-              [ "0" ],
-              [ "0.0001" ],
-              [ "1" ]
-            ],
-            "settings": [ "bDirShadowMapFullViewPort", "fMaxHeightShadowCastingTrees", "fFirstSliceDistance", "bDrawLandShadows", "bTreesReceiveShadows", "fShadowDistance", "iShadowMapResolution" ],
-            "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini", "SkyrimPrefs.ini", "SkyrimPrefs.ini", "SkyrimPrefs.ini", "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display", "Display", "Display", "Display", "Display", "Display", "Display" ],
-            "tooltip": "Toggles off shadows.",
-            "type": "Checkbutton"
-          },
-          "Tree Shadows": {
-            "dependentSettings": {
-              "Remove Shadows": {
-                "operator": "not-equal",
-                "value": [
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0.0001" ],
-                  [ "1" ]
-                ]
-              }
-            },
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bTreesReceiveShadows" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Toggles the ability of trees to cast shadows upon themselves.",
-            "type": "Checkbutton"
-          },
-          "Land Shadows": {
-            "dependentSettings": {
-              "Remove Shadows": {
-                "operator": "not-equal",
-                "value": [
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0" ],
-                  [ "0.0001" ],
-                  [ "1" ]
-                ]
-              }
-            },
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bDrawLandShadows" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Toggles the ability of land objects such as rocks and mountains to cast shadows.",
-            "type": "Checkbutton"
-          },
-          "Ambient Occlusion": {
-            "Offvalue": [ [ "0" ] ],
-            "Onvalue": [ [ "1" ] ],
-            "settings": [ "bSAOEnable" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "tooltip": "Toggles ambient occlusion.",
-            "type": "Checkbutton"
-          }
-        }
-      },
-      "Grass": {
-        
-        "NumberOfVerticallyStackedSettings": "2",
+        "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
           "Disable Grass": {
             "Offvalue": [
@@ -1899,7 +1839,7 @@
             "type": "Checkbutton"
           },
           "Density": {
-            "customWidth": "8",
+            "customWidth": "18",
             "decimal places": "0",
             "digits": "3",
             "from": "120",
@@ -1917,7 +1857,7 @@
             "width": "7"
           },
           "Diversity": {
-            "customWidth": "8",
+            "customWidth": "18",
             "decimal places": "0",
             "digits": "2",
             "from": "1",
@@ -1933,8 +1873,42 @@
             "validate": "integer",
             "width": "7"
           },
+          "Grass Fade Start": {
+            "customWidth": "18",
+            "decimal places": "0",
+            "digits": "4",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "256",
+            "settings": [ "fGrassStartFadeDistance" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Grass" ],
+            "to": "6144",
+            "tooltip": "Sets the distance where grass starts to fade.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
+          },
+          "Grass Fade Range": {
+            "customWidth": "18",
+            "decimal places": "0",
+            "digits": "5",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "4",
+            "settings": [ "fGrassFadeRange" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Grass" ],
+            "to": "14128",
+            "tooltip": "Sets the grass fade range distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
+          },
           "Minimum Wind": {
-            "customWidth": "14",
+            "customWidth": "18",
             "decimal places": "0",
             "digits": "3",
             "from": "0",
@@ -1951,7 +1925,7 @@
             "width": "7"
           },
           "Maximum Wind": {
-            "customWidth": "14",
+            "customWidth": "18",
             "decimal places": "0",
             "digits": "3",
             "from": "0",
@@ -1971,9 +1945,11 @@
       },
       "Trees": {
         "Pack": {
-          "Side": "Left"
+          "Side": "Left",
+          "Expand": 0,
+          "Fill": "None"
         },
-        "NumberOfVerticallyStackedSettings": "4",
+        "NumberOfVerticallyStackedSettings": "9",
         "Settings": {
           "Dynamic Trees": {
             "Offvalue": [
@@ -2028,6 +2004,7 @@
           },
           "Max Skinned Trees": {
             "decimal places": "0",
+            "customWidth": "22",
             "digits": "3",
             "from": "0",
             "increment": "1",
@@ -2050,12 +2027,94 @@
                 ]
               }
             }
+          },
+          "Skinned Trees Distance": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "5",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "512",
+            "settings": [ "fTreesMidLODSwitchDist" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "20480",
+            "tooltip": "Sets the distance that trees have full skinned details. The trees switch to the lower quality SwitchNode mesh within the nif after this distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Dynamic Trees": {
+                "operator": "equal",
+                "value": [
+                  [ "1" ],
+                  [ "1" ]
+                ]
+              }
+            }
+          },
+          "Level 1 Tree Details": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "5",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "512",
+            "settings": [ "fMeshLODLevel1FadeTreeDistance" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "20480",
+            "tooltip": "Sets the level 1 skinned tree detail fade distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Dynamic Trees": {
+                "operator": "equal",
+                "value": [
+                  [ "1" ],
+                  [ "1" ]
+                ]
+              }
+            }
+          },
+          "Level 2 Tree Details": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "5",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "512",
+            "settings": [ "fMeshLODLevel2FadeTreeDistance" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "20480",
+            "tooltip": "Sets the level 2 skinned tree detail fade distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Dynamic Trees": {
+                "operator": "equal",
+                "value": [
+                  [ "1" ],
+                  [ "1" ]
+                ]
+              }
+            }
           }
         }
       },
       "Water": {
-        
-        "NumberOfVerticallyStackedSettings": "2",
+        "Pack": {
+          "Side": "Left",
+          "Fill": "None",
+          "Expand": 0
+        },
+        "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
           "Reflect Trees": {
             "Offvalue": [ [ "0" ] ],
@@ -2092,15 +2151,622 @@
             "targetSections": [ "Water" ],
             "tooltip": "Toggles the sky reflection in the water.",
             "type": "Checkbutton"
+          },
+          "Water SSR Blur": {
+            "decimal places": "2",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.1",
+            "settings": [ "fWaterSSRBlurAmount" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "2",
+            "tooltip": "Sets the amount of blur on screen space reflections in water.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Water SSR Intensity": {
+            "decimal places": "2",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.1",
+            "settings": [ "fWaterSSRIntensity" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "2",
+            "tooltip": "Sets the intensity of screen space reflections in water.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Water SSR Perturbation": {
+            "decimal places": "2",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fWaterSSRNormalPerturbationScale" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the perturbation scale of screen space reflections in water.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          }
+        }
+      }
+    },
+    "Shadows": {
+      "NoLabelFrame": {
+        "Pack": {
+          "Expand": 0
+        },
+        "NumberOfVerticallyStackedSettings": "4",
+        "Settings": {
+          "Tree Shadows": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bTreesReceiveShadows" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles the ability of trees to cast shadows upon themselves.",
+            "type": "Checkbutton"
+          },
+          "High Tree Shadows": {
+            "Offvalue": [ [ "1" ] ],
+            "Onvalue": [ [ "0" ] ],
+            "settings": [ "bDisableHighTreeShadow" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles high tree shadows.",
+            "type": "Checkbutton"
+          },
+          "Land Shadows": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bDrawLandShadows" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles the ability of land objects such as rocks and mountains to cast shadows.",
+            "type": "Checkbutton"
+          },
+          "Shadow Resolution": {
+            "choices": [ "2", "256", "512", "1024", "2048", "4096", "8192", "16384" ],
+            "settings": [ "iShadowMapResolution" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Sets the resolution of shadows.",
+            "type": "Combobox",
+            "validate": "integer",
+            "width": "8"
+          },
+          "Shadow Bias": {
+            "customWidth": "22",
+            "decimal places": "2",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fShadowDirectionalBiasScale" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the directional bias of the shadows applied to surfaces. Low values reduce peter-panning (detached shadows), but cause more shadow acne (AKA shadow striping).",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Shadow Filtering": {
+            "customWidth": "22",
+            "decimal places": "2",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fPoissonRadiusScale" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "8",
+            "tooltip": "Sets the amount of shadow filtering.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Detailed Draw Distance": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "4",
+            "from": "0",
+            "increment": "4",
+            "length": "100",
+            "resolution": "4",
+            "settings": [ "fFirstSliceDistance" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "6144",
+            "tooltip": "Sets the detailed draw distance (the shadows closest to your character).",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Exterior Draw Distance": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "4",
+            "from": "0",
+            "increment": "4",
+            "length": "100",
+            "resolution": "4",
+            "settings": [ "fShadowDistance" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "16384",
+            "tooltip": "Sets the exterior shadow distance.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Focus Shadows": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "2",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "iNumFocusShadow" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "16",
+            "tooltip": "Sets the maximum number of objects to use very highly detailed shadows based on where you are looking.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
+          },
+          "High Tree Shadow Limit": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "2",
+            "from": "0",
+            "increment": "4",
+            "length": "100",
+            "resolution": "4",
+            "settings": [ "fMaxHeightShadowCastingTrees" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "16384",
+            "tooltip": "Sets the maximum height that trees can cast high tree shadows.",
+            "type": "Slider",
+            "validate": "float",
+            "dependentSettings": {
+              "High Tree Shadows": {
+                "operator": "equal",
+                "value": [ [ "0" ] ]
+              }
+            },
+            "width": "7"
           }
         }
       },
-      "Screen Space Reflections": {
+      "Ambient Occlution": {
         "Pack": {
-          "Side": "Left"
+          "Expand": 0,
+          "Fill": "None"
+        },
+        "NumberOfVerticallyStackedSettings": "8",
+        "Settings": {
+          "Ambient Occlusion": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bSAOEnable" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles ambient occlusion.",
+            "type": "Checkbutton"
+          },
+          "SAO Bias": {
+            "decimal places": "1",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".1",
+            "length": "100",
+            "resolution": "0.1",
+            "settings": [ "fSAOBias" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "5",
+            "tooltip": "Sets the SAO bias.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "SAO Exp Factor": {
+            "decimal places": "2",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fSAOExpFactor" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the SAO bias.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "SAO Intensity": {
+            "decimal places": "1",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".1",
+            "length": "100",
+            "resolution": "0.1",
+            "settings": [ "fSAOIntensity" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "30",
+            "tooltip": "Sets the SAO intensity.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "SAO Radius": {
+            "decimal places": "0",
+            "customWidth": "20",
+            "digits": "4",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "fSAORadius" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1024",
+            "tooltip": "Sets the SAO radio.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "SAO Value Diff Factor": {
+            "decimal places": "2",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fSAOValueDiffFactor" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the SAO value diff factor.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          }
+        }
+      }
+    },
+    "Visuals": {
+      "Sun": {
+        "Pack": {
+          "Expand": 0,
+          "Fill": "None"
         },
         "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
+          "Sun Base Size": {
+            "customWidth": "14",
+            "choices": [ "200", "425" ],
+            "decimal places": "0",
+            "settings": [ "fSunBaseSize" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Weather" ],
+            "tooltip": "Sets sun base size.",
+            "type": "Combobox",
+            "validate": "integer"
+          },
+          "Sun Glare Size": {
+            "customWidth": "14",
+            "choices": [ "282", "600" ],
+            "decimal places": "0",
+            "settings": [ "fSunGlareSize" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Weather" ],
+            "tooltip": "Sets sun base size.",
+            "type": "Combobox",
+            "validate": "integer"
+          },
+          "Sun Boost": {
+            "decimal places": "2",
+            "customWidth": "20",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fSunBoost" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Weather" ],
+            "to": "2",
+            "tooltip": "Sets the sun boost.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+
+
+          "Sun Glare Multiplier": {
+            "customWidth": "20",
+            "decimal places": "2",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fSunGlareMultiplier" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Weather" ],
+            "to": "4",
+            "tooltip": "Sets the sun glare multiplier.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          }
+        }
+      },
+      "Decals": {
+        "Pack": {
+          "Side": "Left",
+          "Expand": 0,
+          "Fill": "None"
+        },
+        "NumberOfVerticallyStackedSettings": "8",
+        "Settings": {
+          "Decals": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bDecals" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Decals" ],
+            "tooltip": "Toggles decals (mostly blood effects).",
+            "type": "Checkbutton"
+          },
+          "Disable Gore": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bDisableAllGore" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "General" ],
+            "tooltip": "Toggles gory effects, such as blood.",
+            "type": "Checkbutton"
+          },
+          "Max Decals Per Frame": {
+            "customWidth": "30",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "iMaxDecalsPerFrame" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "250",
+            "tooltip": "Sets the maximum number of decals that can be shown per frame.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Decals": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            }
+          },
+          "Max Skinned Decals": {
+            "customWidth": "30",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "uMaxSkinDecals" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Decals" ],
+            "to": "100",
+            "tooltip": "Sets the maximum number of skinned decals.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Decals": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            }
+          },
+          "Max Skinned Decals Per Frame": {
+            "customWidth": "30",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "iMaxSkinDecalsPerFrame" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "100",
+            "tooltip": "Sets the maximum number of skinned decals that can be shown per frame.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Decals": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            }
+          },
+          "Max Skinned Decals Per Actor": {
+            "customWidth": "30",
+            "decimal places": "0",
+            "digits": "2",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "uMaxSkinDecalPerActor" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Decals" ],
+            "to": "60",
+            "tooltip": "Sets the maximum number of skinned decals per actor.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Decals": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            }
+          },
+          "Decal Lifetime": {
+            "customWidth": "30",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "1",
+            "settings": [ "fDecalLifetime" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "300",
+            "tooltip": "Sets the time in seconds that some decals will stay visible.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7",
+            "dependentSettings": {
+              "Decals": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            }
+          },
+          "Decal Distance": {
+            "customWidth": "30",
+            "decimal places": "0",
+            "digits": "3",
+            "from": "0",
+            "increment": "4",
+            "length": "100",
+            "resolution": "4",
+            "settings": [ "fDecalLOD0" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "16384",
+            "tooltip": "Sets the distance that some decals will show.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7",
+            "dependentSettings": {
+              "Decals": {
+                "operator": "equal",
+                "value": [ [ "1" ] ]
+              }
+            }
+          }
+        }
+      },
+      "Effects": {
+        "Pack": {
+          "Expand": 0,
+          "Fill": "None"
+        },
+        "NumberOfVerticallyStackedSettings": "8",
+        "Settings": {
+          "Particles": {
+            "choices": [ "250", "750", "1500", "3000", "4500", "6000", "7500", "8000", "10000" ],
+            "decimal places": "0",
+            "settings": [ "iMaxDesired" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Particles" ],
+            "tooltip": "Sets the amount of particle effects.",
+            "type": "Combobox",
+            "validate": "integer"
+          },
+          "Godrays": {
+            "choices": [ "None", "Low", "Medium", "High" ],
+            "settingChoices": {
+              "None": [ "0", "0" ],
+              "Low": [ "1", "0" ],
+              "Medium": [ "1", "1" ],
+              "High": [ "1", "2" ]
+            },
+            "settings": [ "bVolumetricLightingEnable", "iVolumetricLightingQuality" ],
+            "targetINIs": [ "SkyrimPrefs.ini", "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display", "Display" ],
+            "tooltip": "Sets Godrays (volumetric lighting) quality.",
+            "type": "Dropdown"
+          },
+          "Interior Godrays": {
+            "Offvalue": [ [ "1" ] ],
+            "Onvalue": [ [ "0" ] ],
+            "settings": [ "bVolumetricLightingDisableInterior" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles Godrays in interiors. This may cause interiors to become overly bright in some cases.",
+            "type": "Checkbutton"
+          },
+
+          "Lens Flare": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bLensFlare" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Imagespace" ],
+            "tooltip": "Toggles lens flare.",
+            "type": "Checkbutton"
+          },
+          "Anamorphic Lens Flare": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bIBLFEnable" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles the horizontal lens flare effect most commonly associated with anamorphic lenses.",
+            "type": "Checkbutton"
+          },
+          "Rain Occlusion": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bUsePrecipitationOcclusion" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles precipitation occlusion (rain will not appear under roofs).",
+            "type": "Checkbutton"
+          },
+
           "Screen Space Reflections": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
@@ -2127,17 +2793,43 @@
             "type": "Spinbox",
             "validate": "counting",
             "width": "2"
+          },
+          "Depth of Field": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bDoDepthOfField" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Imagespace" ],
+            "tooltip": "Toggles depth of field (DOF), a kind of blurring to imitate the human eye's perception, in imagespace. This is most noticeable under water, reducing visibility to realistic levels (it looks clear otherwise). It is recommended to leave this enabled, as most of the bad depth of field is controlled by the DOF Multiplier below.",
+            "type": "Checkbutton"
+          },
+          "DOF Multiplier": {
+            "decimal places": "2",
+            "digits": "3",
+            "from": "0",
+            "increment": ".01",
+            "length": "100",
+            "resolution": "0.01",
+            "settings": [ "fDynamicDOFBlurMultiplier" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "1",
+            "tooltip": "Sets the depth of field multiplier.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
           }
+
         }
       }
+
     },
     "View Distance": {
       "Near Details": {
         "Pack": {
-          "Side": "Top",
-          "Fill": "Y"
+          "Fill": "None"
         },
-        "NumberOfVerticallyStackedSettings": "8",
+        "NumberOfVerticallyStackedSettings": "6",
         "Settings": {
           "Environment Map Fade Start": {
             "customWidth": "25",
@@ -2242,7 +2934,7 @@
             "width": "7"
           },
           "Decal Fade Start": {
-            "customWidth": "25",
+            "customWidth": "22",
             "decimal places": "3",
             "digits": "4",
             "from": "0",
@@ -2259,7 +2951,7 @@
             "width": "7"
           },
           "Decal Fade End": {
-            "customWidth": "25",
+            "customWidth": "22",
             "decimal places": "3",
             "digits": "4",
             "from": "0",
@@ -2275,42 +2967,8 @@
             "validate": "float",
             "width": "7"
           },
-          "Grass Fade Start": {
-            "customWidth": "18",
-            "decimal places": "0",
-            "digits": "4",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "256",
-            "settings": [ "fGrassStartFadeDistance" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Grass" ],
-            "to": "6144",
-            "tooltip": "Sets the distance where grass starts to fade.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7"
-          },
-          "Grass Fade Range": {
-            "customWidth": "18",
-            "decimal places": "0",
-            "digits": "5",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "883",
-            "settings": [ "fGrassFadeRange" ],
-            "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Grass" ],
-            "to": "14128",
-            "tooltip": "Sets the grass fade range distance.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7"
-          },
           "Light Fade Start": {
-            "customWidth": "18",
+            "customWidth": "22",
             "decimal places": "0",
             "digits": "4",
             "from": "0",
@@ -2327,7 +2985,7 @@
             "width": "7"
           },
           "Light Fade Range": {
-            "customWidth": "18",
+            "customWidth": "22",
             "decimal places": "0",
             "digits": "5",
             "from": "0",
@@ -2339,6 +2997,40 @@
             "targetSections": [ "Display" ],
             "to": "34816",
             "tooltip": "Sets the light fade range distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
+          },
+          "Level 1 Object Details": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "5",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "512",
+            "settings": [ "fMeshLODLevel1FadeDist" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "20480",
+            "tooltip": "Sets the level 1 object detail fade distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
+          },
+          "Level 2 Object Details": {
+            "customWidth": "22",
+            "decimal places": "0",
+            "digits": "5",
+            "from": "0",
+            "increment": "1",
+            "length": "100",
+            "resolution": "512",
+            "settings": [ "fMeshLODLevel2FadeDist" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "Display" ],
+            "to": "20480",
+            "tooltip": "Sets the level 2 object detail fade distance.",
             "type": "Slider",
             "validate": "integer",
             "width": "7"
@@ -2408,151 +3100,21 @@
             "type": "Spinbox",
             "validate": "whole",
             "width": "5"
-          },
-          "Level 1 Object Details": {
-            "customWidth": "22",
-            "decimal places": "0",
-            "digits": "5",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "512",
-            "settings": [ "fMeshLODLevel1FadeDist" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "20480",
-            "tooltip": "Sets the level 1 object detail fade distance.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7"
-          },
-          "Level 2 Object Details": {
-            "customWidth": "22",
-            "decimal places": "0",
-            "digits": "5",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "512",
-            "settings": [ "fMeshLODLevel2FadeDist" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "20480",
-            "tooltip": "Sets the level 2 object detail fade distance.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7"
-          },
-          "Skinned Trees Distance": {
-            "customWidth": "22",
-            "decimal places": "0",
-            "digits": "5",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "512",
-            "settings": [ "fTreesMidLODSwitchDist" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "20480",
-            "tooltip": "Sets the distance that trees have full skinned details. The trees switch to the lower quality SwitchNode mesh within the nif after this distance.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Dynamic Trees": {
-                "operator": "equal",
-                "value": [
-                  [ "1" ],
-                  [ "1" ]
-                ]
-              }
-            }
-          },
-          "Level 1 Tree Details": {
-            "customWidth": "22",
-            "decimal places": "0",
-            "digits": "5",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "512",
-            "settings": [ "fMeshLODLevel1FadeTreeDistance" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "20480",
-            "tooltip": "Sets the level 1 skinned tree detail fade distance.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Dynamic Trees": {
-                "operator": "equal",
-                "value": [
-                  [ "1" ],
-                  [ "1" ]
-                ]
-              }
-            }
-          },
-          "Level 2 Tree Details": {
-            "customWidth": "22",
-            "decimal places": "0",
-            "digits": "5",
-            "from": "0",
-            "increment": "1",
-            "length": "100",
-            "resolution": "512",
-            "settings": [ "fMeshLODLevel2FadeTreeDistance" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "Display" ],
-            "to": "20480",
-            "tooltip": "Sets the level 2 skinned tree detail fade distance.",
-            "type": "Slider",
-            "validate": "integer",
-            "width": "7",
-            "dependentSettings": {
-              "Dynamic Trees": {
-                "operator": "equal",
-                "value": [
-                  [ "1" ],
-                  [ "1" ]
-                ]
-              }
-            }
           }
         }
       },
       "Distant Details": {
         "Pack": {
-          "Side": "Left",
-          "Fill": "Y"
+          "Fill": "None"
         },
-        "NumberOfVerticallyStackedSettings": "4",
+        "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
-          "Terrain Multiplier": {
-            "customWidth": "20",
-            "decimal places": "3",
-            "digits": "4",
-            "from": "0",
-            "increment": "0.005",
-            "length": "100",
-            "resolution": "0.05",
-            "settings": [ "fSplitDistanceMult" ],
-            "targetINIs": [ "SkyrimPrefs.ini" ],
-            "targetSections": [ "TerrainManager" ],
-            "to": "4",
-            "tooltip": "Sets the terrain multiplier. This value gets multiplied by the block distances to determine the terrain LOD distance.",
-            "type": "Slider",
-            "validate": "float",
-            "width": "7"
-          },
           "Level 4 Block Distance": {
             "customWidth": "20",
             "decimal places": "0",
             "digits": "5",
             "from": "0",
-            "increment": "1",
+            "increment": "4",
             "length": "100",
             "resolution": "4096",
             "settings": [ "fBlockLevel0Distance" ],
@@ -2569,7 +3131,7 @@
             "decimal places": "0",
             "digits": "6",
             "from": "0",
-            "increment": "1",
+            "increment": "4",
             "length": "210",
             "resolution": "8192",
             "settings": [ "fBlockLevel1Distance" ],
@@ -2587,7 +3149,7 @@
             "decimal places": "0",
             "digits": "6",
             "from": "0",
-            "increment": "1",
+            "increment": "4",
             "length": "300",
             "resolution": "16384",
             "settings": [ "fBlockMaximumDistance" ],
@@ -2599,21 +3161,65 @@
             "validate": "integer",
             "width": "7"
           },
+          "Terrain Multiplier": {
+            "customWidth": "20",
+            "decimal places": "3",
+            "digits": "4",
+            "from": "0",
+            "increment": "0.005",
+            "length": "100",
+            "resolution": "0.05",
+            "settings": [ "fSplitDistanceMult" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "TerrainManager" ],
+            "to": "4",
+            "tooltip": "Sets the terrain multiplier. This value gets multiplied by the block distances to determine the terrain LOD distance.",
+            "type": "Slider",
+            "validate": "float",
+            "width": "7"
+          },
+          "Neverfade Distance": {
+            "decimal places": "0",
+            "customWidth": "20",
+            "digits": "6",
+            "from": "0",
+            "increment": "4",
+            "length": "100",
+            "resolution": "4096",
+            "settings": [ "fSkyCellRefFadeDistance" ],
+            "targetINIs": [ "SkyrimPrefs.ini" ],
+            "targetSections": [ "MAIN" ],
+            "to": "598016",
+            "tooltip": "Sets the tree LOD distance.",
+            "type": "Slider",
+            "validate": "integer",
+            "width": "7"
+          },
           "Tree LOD Distance": {
             "decimal places": "0",
+            "customWidth": "20",
             "digits": "5",
             "from": "0",
             "increment": "1",
-            "length": "110",
+            "length": "100",
             "resolution": "4096",
             "settings": [ "fTreeLoadDistance" ],
             "targetINIs": [ "SkyrimPrefs.ini" ],
             "targetSections": [ "TerrainManager" ],
             "to": "98304",
-            "tooltip": "Sets the tree LOD distance.",
+            "tooltip": "Sets the tree LOD distance. Set to 0 if using DynDOLOD Ultra trees in object LOD.",
             "type": "Slider",
             "validate": "integer",
             "width": "7"
+          },
+          "Land Fade": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bEnableLandFade" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Display" ],
+            "tooltip": "Toggles terrain LOD fade. Recommended to be disabled to prevent flickering.",
+            "type": "Checkbutton"
           },
           "Large Reference Grid": {
             "decimal places": "0",

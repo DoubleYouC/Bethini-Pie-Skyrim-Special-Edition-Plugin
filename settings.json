@@ -77,7 +77,8 @@
       "section": "Actor",
       "type": "float",
       "value": {
-        "default": 4096.0000
+        "default": 4096,
+        "recommended": 12288
       }
     },
     {
@@ -2619,7 +2620,7 @@
       "type": "float",
       "value": {
         "default": 0.8000,
-        "recommended": 10.0
+        "recommended": 3.0
       }
     },
     {
@@ -2891,7 +2892,8 @@
       "section": "Camera",
       "type": "number",
       "value": {
-        "default": 500
+        "default": 500,
+        "recommended": 250
       }
     },
     {
@@ -3495,7 +3497,7 @@
       "alwaysPrint": true,
       "type": "float",
       "value": {
-        "default": 1.0000,
+        "default": 1.0,
         "recommended": 0.7
       }
     },
@@ -4812,7 +4814,8 @@
       "section": "Display",
       "type": "boolean",
       "value": {
-        "default": 1
+        "default": 1,
+        "recommended": 1
       }
     },
     {
@@ -5359,8 +5362,8 @@
         "Vanilla Ultra": 1,
         "Bethini Poor": 0,
         "Bethini Low": 0,
-        "Bethini Medium": 0,
-        "Bethini High": 0,
+        "Bethini Medium": 1,
+        "Bethini High": 1,
         "Bethini Ultra": 1
       }
     },
@@ -5629,7 +5632,16 @@
       "section": "Display",
       "type": "float",
       "value": {
-        "default": 800.0000
+        "default": 800.0000,
+        "Vanilla Low": 800.0,
+        "Vanilla Medium": 800.0,
+        "Vanilla High": 800.0,
+        "Vanilla Ultra": 800.0,
+        "Bethini Poor": 800.0,
+        "Bethini Low": 6144.0,
+        "Bethini Medium": 8192.0,
+        "Bethini High": 10240.0,
+        "Bethini Ultra": 12288.0
       }
     },
     {
@@ -6565,7 +6577,7 @@
       "section": "Display",
       "type": "float",
       "value": {
-        "default": 0.3000,
+        "default": 0.3,
         "Vanilla Low": 0.3,
         "Vanilla Medium": 0.3,
         "Vanilla High": 0.3,
@@ -6590,10 +6602,10 @@
         "Vanilla High": 8000,
         "Vanilla Ultra": 10000,
         "Bethini Poor": 0.0001,
-        "Bethini Low": 2715,
+        "Bethini Low": 2896,
         "Bethini Medium": 3620,
-        "Bethini High": 8145,
-        "Bethini Ultra": 10860
+        "Bethini High": 8192,
+        "Bethini Ultra": 10240
       }
     },
     {
@@ -7204,7 +7216,7 @@
         "Vanilla Medium": 2048,
         "Vanilla High": 2048,
         "Vanilla Ultra": 4096,
-        "Bethini Poor": 1,
+        "Bethini Poor": 2,
         "Bethini Low": 512,
         "Bethini Medium": 1024,
         "Bethini High": 2048,
@@ -7853,7 +7865,8 @@
       "alwaysPrint": true,
       "type": "boolean",
       "value": {
-        "default": 0
+        "default": 0,
+        "recommended": 1
       }
 
 
@@ -7871,7 +7884,8 @@
       "section": "General",
       "type": "boolean",
       "value": {
-        "default": 0
+        "default": 0,
+        "recommended": 0
       }
     },
     {
@@ -8411,7 +8425,16 @@
       "section": "General",
       "type": "float",
       "value": {
-        "default": 1024.0000
+        "default": 1024,
+        "Vanilla Low": 1024,
+        "Vanilla Medium": 1024,
+        "Vanilla High": 1024,
+        "Vanilla Ultra": 1024,
+        "Bethini Poor": 1024,
+        "Bethini Low": 2048,
+        "Bethini Medium": 4096,
+        "Bethini High": 6144,
+        "Bethini Ultra": 8192
       }
     },
     {
@@ -8792,7 +8815,15 @@
       "alwaysPrint": true,
       "type": "string",
       "value": {
-        "default": "ENGLISH"
+        "default": "ENGLISH",
+        "Chinese": "CHINESE",
+        "Japanese": "JAPENESE",
+        "French": "FRENCH",
+        "German": "GERMAN",
+        "Italian": "ITALIAN",
+        "Spanish": "SPANISH",
+        "Polish": "POLISH",
+        "Russian": "RUSSIAN"
       }
     },
     {
@@ -9198,7 +9229,8 @@
       "section": "Grass",
       "type": "boolean",
       "value": {
-        "default": 1
+        "default": 1,
+        "recommended": 0
       }
     },
     {
@@ -9231,16 +9263,16 @@
       "section": "Grass",
       "type": "float",
       "value": {
-        "default": 1000.0000,
-        "Vanilla Low": 1000.0,
-        "Vanilla Medium": 1000.0,
-        "Vanilla High": 1000.0,
-        "Vanilla Ultra": 1000.0,
-        "Bethini Poor": 0.0,
-        "Bethini Low": 1766.0,
-        "Bethini Medium": 3532.0,
-        "Bethini High": 6181.0,
-        "Bethini Ultra": 14128.0
+        "default": 1000,
+        "Vanilla Low": 1000,
+        "Vanilla Medium": 1000,
+        "Vanilla High": 1000,
+        "Vanilla Ultra": 1000,
+        "Bethini Poor": 0,
+        "Bethini Low": 1766,
+        "Bethini Medium": 3532,
+        "Bethini High": 6144,
+        "Bethini Ultra": 14128
       }
     },
     {
@@ -9250,7 +9282,7 @@
       "alwaysPrint": true,
       "type": "float",
       "value": {
-        "default": 7000.0000
+        "default": 7000
       }
     },
     {
@@ -9260,9 +9292,9 @@
       "alwaysPrint": true,
       "type": "float",
       "value": {
-        "default": 400.0000,
-        "fixedDefault": 0.0000,
-        "recommended": 0.0
+        "default": 400,
+        "fixedDefault": 0,
+        "recommended": 0
       }
     },
     {
@@ -9289,7 +9321,16 @@
       "section": "Grass",
       "type": "float",
       "value": {
-        "default": 125.0000
+        "default": 125.0000,
+        "Vanilla Low": 125,
+        "Vanilla Medium": 125,
+        "Vanilla High": 125,
+        "Vanilla Ultra": 125,
+        "Bethini Poor": 0,
+        "Bethini Low": 125,
+        "Bethini Medium": 125,
+        "Bethini High": 125,
+        "Bethini Ultra": 125
       }
     },
     {
@@ -9297,7 +9338,16 @@
       "section": "Grass",
       "type": "float",
       "value": {
-        "default": 5.0000
+        "default": 5,
+        "Vanilla Low": 5,
+        "Vanilla Medium": 5,
+        "Vanilla High": 5,
+        "Vanilla Ultra": 5,
+        "Bethini Poor": 0,
+        "Bethini Low": 5,
+        "Bethini Medium": 5,
+        "Bethini High": 5,
+        "Bethini Ultra": 5
       }
     },
     {
@@ -9331,7 +9381,16 @@
       "section": "Grass",
       "type": "number",
       "value": {
-        "default": 2
+        "default": 2,
+        "Vanilla Low": 2,
+        "Vanilla Medium": 2,
+        "Vanilla High": 2,
+        "Vanilla Ultra": 2,
+        "Bethini Poor": 0,
+        "Bethini Low": 2,
+        "Bethini Medium": 8,
+        "Bethini High": 15,
+        "Bethini Ultra": 15
       }
     },
     {
@@ -9340,7 +9399,16 @@
       "section": "Grass",
       "type": "number",
       "value": {
-        "default": 20
+        "default": 20,
+        "Vanilla Low": 20,
+        "Vanilla Medium": 20,
+        "Vanilla High": 20,
+        "Vanilla Ultra": 20,
+        "Bethini Poor": 100,
+        "Bethini Low": 40,
+        "Bethini Medium": 40,
+        "Bethini High": 40,
+        "Bethini Ultra": 40
       }
     },
     {
@@ -10137,7 +10205,8 @@
       "section": "Interface",
       "type": "float",
       "value": {
-        "default": 1000.0000
+        "default": 1000,
+        "recommended": 500
       }
     },
     {
@@ -12118,7 +12187,7 @@
         "Bethini Low": 0.15,
         "Bethini Medium": 0.3,
         "Bethini High": 0.6,
-        "Bethini Ultra": 1.1
+        "Bethini Ultra": 1.0
 
       }
     },
@@ -12138,7 +12207,7 @@
         "Bethini Low": 0.1,
         "Bethini Medium": 0.2,
         "Bethini High": 0.5,
-        "Bethini Ultra": 1.0
+        "Bethini Ultra": 0.9
       }
     },
     {
@@ -12152,11 +12221,11 @@
         "Vanilla Medium": 0.1,
         "Vanilla High": 0.1,
         "Vanilla Ultra": 0.1,
-        "Bethini Poor": 0.06,
-        "Bethini Low": 0.15,
-        "Bethini Medium": 0.3,
-        "Bethini High": 0.6,
-        "Bethini Ultra": 1.1
+        "Bethini Poor": 0.1,
+        "Bethini Low": 0.25,
+        "Bethini Medium": 0.4,
+        "Bethini High": 0.7,
+        "Bethini Ultra": 1.0
       }
     },
     {
@@ -12170,11 +12239,11 @@
         "Vanilla Medium": 0.09,
         "Vanilla High": 0.09,
         "Vanilla Ultra": 0.09,
-        "Bethini Poor": 0.05,
-        "Bethini Low": 0.1,
-        "Bethini Medium": 0.2,
-        "Bethini High": 0.5,
-        "Bethini Ultra": 1.0
+        "Bethini Poor": 0.09,
+        "Bethini Low": 0.2,
+        "Bethini Medium": 0.3,
+        "Bethini High": 0.6,
+        "Bethini Ultra": 0.9
       }
     },
     {
@@ -12182,16 +12251,7 @@
       "section": "LightingShader",
       "type": "float",
       "value": {
-        "default": 0.0500,
-        "Vanilla Low": 0.05,
-        "Vanilla Medium": 0.05,
-        "Vanilla High": 0.05,
-        "Vanilla Ultra": 0.05,
-        "Bethini Poor": 0.05,
-        "Bethini Low": 0.1,
-        "Bethini Medium": 0.2,
-        "Bethini High": 0.5,
-        "Bethini Ultra": 1.0
+        "default": 0.0500
       }
     },
     {
@@ -12199,16 +12259,7 @@
       "section": "LightingShader",
       "type": "float",
       "value": {
-        "default": 0.0300,
-        "Vanilla Low": 0.03,
-        "Vanilla Medium": 0.03,
-        "Vanilla High": 0.03,
-        "Vanilla Ultra": 0.03,
-        "Bethini Poor": 0.03,
-        "Bethini Low": 0.15,
-        "Bethini Medium": 0.3,
-        "Bethini High": 0.6,
-        "Bethini Ultra": 1.1
+        "default": 0.0300
       }
     },
     {
@@ -12216,16 +12267,7 @@
       "section": "LightingShader",
       "type": "float",
       "value": {
-        "default": 0.0250,
-        "Vanilla Low": 0.025,
-        "Vanilla Medium": 0.025,
-        "Vanilla High": 0.025,
-        "Vanilla Ultra": 0.025,
-        "Bethini Poor": 0.025,
-        "Bethini Low": 0.1,
-        "Bethini Medium": 0.2,
-        "Bethini High": 0.5,
-        "Bethini Ultra": 1.0
+        "default": 0.0250
       }
     },
     {
@@ -12233,16 +12275,7 @@
       "section": "LightingShader",
       "type": "float",
       "value": {
-        "default": 0.1000,
-        "Vanilla Low": 0.1,
-        "Vanilla Medium": 0.1,
-        "Vanilla High": 0.1,
-        "Vanilla Ultra": 0.1,
-        "Bethini Poor": 0.06,
-        "Bethini Low": 0.15,
-        "Bethini Medium": 0.3,
-        "Bethini High": 0.6,
-        "Bethini Ultra": 1.1
+        "default": 0.1
       }
     },
     {
@@ -12250,16 +12283,7 @@
       "section": "LightingShader",
       "type": "float",
       "value": {
-        "default": 0.0900,
-        "Vanilla Low": 0.09,
-        "Vanilla Medium": 0.09,
-        "Vanilla High": 0.09,
-        "Vanilla Ultra": 0.09,
-        "Bethini Poor": 0.05,
-        "Bethini Low": 0.1,
-        "Bethini Medium": 0.2,
-        "Bethini High": 0.5,
-        "Bethini Ultra": 1.0
+        "default": 0.09
       }
     },
     {
@@ -12750,8 +12774,16 @@
       "alwaysPrint": true,
       "type": "float",
       "value": {
-        "default": 150000.0000,
-        "recommended": 295000.0
+        "default": 150000,
+        "Vanilla Low": 150000,
+        "Vanilla Medium": 150000,
+        "Vanilla High": 150000,
+        "Vanilla Ultra": 150000,
+        "Bethini Poor": 131072,
+        "Bethini Low": 196608,
+        "Bethini Medium": 262144,
+        "Bethini High": 327680,
+        "Bethini Ultra": 598016
       }
     },
     {
@@ -12839,7 +12871,8 @@
       "section": "MapMenu",
       "type": "boolean",
       "value": {
-        "default": 0
+        "default": 0,
+        "recommended": 1
       }
     },
     {
@@ -13025,7 +13058,7 @@
       "type": "float",
       "value": {
         "default": 75.0000,
-        "recommended": 90.0
+        "recommended": 90
       }
     },
     {
@@ -13043,7 +13076,7 @@
       "type": "float",
       "value": {
         "default": 15.0000,
-        "recommended": 0.0
+        "recommended": 0
       }
     },
     {
@@ -13061,7 +13094,7 @@
       "type": "float",
       "value": {
         "default": 80.0000,
-        "recommended": 400.0
+        "recommended": 400
       }
     },
     {
@@ -13093,7 +13126,8 @@
       "section": "MapMenu",
       "type": "float",
       "value": {
-        "default": 0.3000000119
+        "default": 0.3000000119,
+        "recommended": 0
       }
     },
     {
@@ -13109,7 +13143,8 @@
       "section": "MapMenu",
       "type": "float",
       "value": {
-        "default": 0.4499999881
+        "default": 0.4499999881,
+        "recommended": 0
       }
     },
     {
@@ -13117,7 +13152,8 @@
       "section": "MapMenu",
       "type": "float",
       "value": {
-        "default": 4.0000
+        "default": 4.0000,
+        "recommended": 0
       }
     },
     {
@@ -13567,7 +13603,8 @@
       "section": "Papyrus",
       "type": "number",
       "value": {
-        "default": 153600
+        "default": 153600,
+        "recommended": 500000
       }
     },
     {
@@ -14804,7 +14841,7 @@
       "alwaysPrint": true,
       "type": "float",
       "value": {
-        "default": 15.0000
+        "default": 15
       }
 
 
