@@ -1228,7 +1228,7 @@
             "settings": [ "bWorldMapNoSkyDepthBlur", "fWorldMapDepthBlurScale", "fWorldMapMaximumDepthBlur", "fWorldMapNearDepthBlurScale" ],
             "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini", "Skyrim.ini" ],
             "targetSections": [ "MapMenu", "MapMenu", "MapMenu", "MapMenu" ],
-            "tooltip": "Unlocks the map menu navigation so that when the right mouse button is held, the camera can move more freely.",
+            "tooltip": "Removes blurring effects on the map menu.",
             "type": "Checkbutton"
           },
           "Map Brightness Boost": {
