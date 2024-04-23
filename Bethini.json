@@ -469,12 +469,12 @@
       "NoLabelFrame": {
         "NumberOfVerticallyStackedSettings": "1",
         "Settings": {
-          "Subtitle Language": {
+          "Text Language": {
             "choices": [ "ENGLISH", "FRENCH", "ITALIAN", "GERMAN", "SPANISH", "POLISH", "CHINESE", "RUSSIAN", "JAPANESE", "Manual..." ],
             "settings": [ "sLanguage" ],
             "targetINIs": [ "Skyrim.ini" ],
             "targetSections": [ "General" ],
-            "tooltip": "Sets the language used for subtitles.",
+            "tooltip": "Sets the language used for text elements.",
             "type": "Dropdown"
           },
           "Freebies Seen": {
