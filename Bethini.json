@@ -794,7 +794,7 @@
         "NumberOfVerticallyStackedSettings": "12",
         "Settings": {
           "Difficulty": {
-            "choices": [ "Very Easy", "Easy", "Normal", "Hard", "Very Hard", "Survival" ],
+            "choices": [ "Easy", "Apprentice", "Adept", "Expert", "Master", "Legendary" ],
             "settingChoices": {
               "Very Easy": [ "0" ],
               "Easy": [ "1" ],
