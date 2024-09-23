@@ -62,7 +62,8 @@
     "iVSyncPresentInterval",
     "bUseTAA",
     "fMouseHeadingXScale",
-    "fMouseHeadingYScale"
+    "fMouseHeadingYScale",
+    "bFreebiesSeen"
   ],
   "Default": "",
   "INIs": {
