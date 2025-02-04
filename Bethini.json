@@ -855,6 +855,15 @@
             "tooltip": "Toggles off unlimited NPC ammo. If enabled, NPCs will no longer have access to unlimited ammo, but shall be forced to only use the ammo they possess.",
             "type": "Checkbutton"
           },
+          "Disable Kill Cam": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bVATSDisable" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Animation" ],
+            "tooltip": "Deactivates cinematic killmove camera. Kill moves will still work.",
+            "type": "Checkbutton"
+          },
 
           "Remove Borders": {
             "Offvalue": [ [ "1" ] ],
