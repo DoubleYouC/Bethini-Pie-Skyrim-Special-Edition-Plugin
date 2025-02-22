@@ -797,12 +797,12 @@
           "Difficulty": {
             "choices": [ "Easy", "Apprentice", "Adept", "Expert", "Master", "Legendary" ],
             "settingChoices": {
-              "Very Easy": [ "0" ],
-              "Easy": [ "1" ],
-              "Normal": [ "2" ],
-              "Hard": [ "3" ],
-              "Very Hard": [ "4" ],
-              "Survival": [ "5" ]
+              "Easy": [ "0" ],
+              "Apprentice": [ "1" ],
+              "Adept": [ "2" ],
+              "Expert": [ "3" ],
+              "Master": [ "4" ],
+              "Legendary": [ "5" ]
             },
             "settings": [ "iDifficulty" ],
             "targetINIs": [ "SkyrimPrefs.ini" ],
