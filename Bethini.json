@@ -101,6 +101,7 @@
           "INI Path": {
             "browse": [ "directory", "Skyrim.ini", "file" ],
             "choices": "FUNCINIPath",
+            "custom_function": "refresh_backups",
             "customWidth": "18",
             "forceSelect": "1",
             "settings": [ "sSkyrim Special EditionINIPath" ],
