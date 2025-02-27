@@ -2120,7 +2120,7 @@
           }
         }
       },
-      "Ambient Occlution": {
+      "Ambient Occlusion": {
         "Pack": {
           "Expand": 0,
           "Fill": "none"
