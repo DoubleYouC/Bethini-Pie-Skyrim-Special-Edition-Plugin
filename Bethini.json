@@ -177,7 +177,7 @@
       "Display": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
@@ -320,7 +320,7 @@
       "Presets": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
@@ -386,7 +386,7 @@
       "Adjustments": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
@@ -493,9 +493,9 @@
     "General": {
       "NoLabelFrame": {
         "Pack": {
-          "Side": "Top",
-          "Anchor": "NW",
-          "Fill": "None",
+          "Side": "top",
+          "Anchor": "nw",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "1",
@@ -519,7 +519,7 @@
             "tooltip": "Toggles the game intro music.",
             "type": "Checkbutton"
           },
-          
+
           "Show Markers": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
@@ -529,7 +529,7 @@
             "tooltip": "Toggles markers useful for modders. Do NOT use for actual gameplay'",
             "type": "Checkbutton"
           },
-          
+
           "Max Cached Sound Size": {
             "choices": [ "4096", "262144" ],
             "settings": [ "uMaxSizeForCachedSound" ],
@@ -544,7 +544,7 @@
       },
       "Saved Games": {
         "Pack": {
-          "Fill": "None",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "2",
@@ -672,8 +672,8 @@
       },
       "Papyrus": {
         "Pack": {
-          "Side": "Left",
-          "Fill": "None",
+          "Side": "left",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "3",
@@ -742,7 +742,7 @@
       },
       "Screenshots": {
         "Pack": {
-          "Fill": "None",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "3",
@@ -789,7 +789,7 @@
     "Gameplay": {
       "NoLabelFrame": {
         "Pack": {
-          "Fill": "None",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "12",
@@ -1008,9 +1008,9 @@
     "Interface": {
       "NoLabelFrame": {
         "Pack": {
-          "Side": "Top",
-          "Anchor": "NW",
-          "Fill": "None",
+          "Side": "top",
+          "Anchor": "nw",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "3",
@@ -1136,7 +1136,7 @@
       },
       "Console": {
         "Pack": {
-          "Fill": "None",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "1",
@@ -1189,9 +1189,9 @@
       },
       "Map Menu": {
         "Pack": {
-          "Side": "Left",
-          "Anchor": "NW",
-          "Fill": "None",
+          "Side": "left",
+          "Anchor": "nw",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "6",
@@ -1282,9 +1282,9 @@
 
       "Mouse Settings": {
         "Pack": {
-          "Side": "Top",
-          "Anchor": "NW",
-          "Fill": "None",
+          "Side": "top",
+          "Anchor": "nw",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "6",
@@ -1365,7 +1365,7 @@
       "Snow": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
@@ -1603,9 +1603,9 @@
       },
       "Grass": {
         "Pack": {
-          "Side": "Left",
+          "Side": "left",
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
@@ -1730,9 +1730,9 @@
       },
       "Trees": {
         "Pack": {
-          "Side": "Left",
+          "Side": "left",
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "9",
         "Settings": {
@@ -1887,8 +1887,8 @@
       },
       "Water": {
         "Pack": {
-          "Side": "Left",
-          "Fill": "None",
+          "Side": "left",
+          "Fill": "none",
           "Expand": 0
         },
         "NumberOfVerticallyStackedSettings": "8",
@@ -2122,7 +2122,7 @@
       "Ambient Occlution": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
@@ -2217,7 +2217,7 @@
       "Sun": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
@@ -2279,9 +2279,9 @@
       },
       "Decals": {
         "Pack": {
-          "Side": "Left",
+          "Side": "left",
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
@@ -2434,7 +2434,7 @@
       "Effects": {
         "Pack": {
           "Expand": 0,
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "8",
         "Settings": {
@@ -2558,7 +2558,7 @@
     "View Distance": {
       "Near Details": {
         "Pack": {
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "6",
         "Settings": {
@@ -2821,7 +2821,7 @@
       },
       "Distant Details": {
         "Pack": {
-          "Fill": "None"
+          "Fill": "none"
         },
         "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
