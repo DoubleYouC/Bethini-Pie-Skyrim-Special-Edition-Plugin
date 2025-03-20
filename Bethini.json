@@ -69,7 +69,12 @@
   "INIs": {
     "Bethini.ini": "",
     "Skyrim.ini": "sSkyrim Special EditionINIPath",
+    "SkyrimCustom.ini": "sSkyrim Special EditionINIPath",
     "SkyrimPrefs.ini": "sSkyrim Special EditionINIPath"
+  },
+  "INI_pecking_order": {
+    "Skyrim.ini": [ "Skyrim.ini", "SkyrimCustom.ini" ],
+    "SkyrimPrefs.ini": [ "Skyrim.ini", "SkyrimCustom.ini", "SkyrimPrefs.ini" ]
   },
   "customFunctions": {
     "FUNCCurrentResolution": "{}",
