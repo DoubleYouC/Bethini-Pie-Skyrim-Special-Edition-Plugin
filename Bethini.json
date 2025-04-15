@@ -823,7 +823,7 @@
             "Onvalue": [ [ "1" ] ],
             "settings": [ "bVATSDisable" ],
             "targetINIs": [ "Skyrim.ini" ],
-            "targetSections": [ "Animation" ],
+            "targetSections": [ "VATS" ],
             "tooltip": "Deactivates cinematic killmove camera. Kill moves will still work.",
             "type": "Checkbutton"
           },
