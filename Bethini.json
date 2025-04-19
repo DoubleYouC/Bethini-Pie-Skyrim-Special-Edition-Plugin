@@ -1344,10 +1344,6 @@
     },
     "Environment": {
       "Snow": {
-        "Pack": {
-          "Expand": 0,
-          "Fill": "none"
-        },
         "NumberOfVerticallyStackedSettings": "3",
         "Settings": {
           "Projected UV Diffuse Normals": {
@@ -1583,30 +1579,8 @@
         }
       },
       "Grass": {
-        "Pack": {
-          "Side": "left",
-          "Expand": 0,
-          "Fill": "none"
-        },
-        "NumberOfVerticallyStackedSettings": "8",
+        "NumberOfVerticallyStackedSettings": "2",
         "Settings": {
-          "Disable Grass": {
-            "Offvalue": [
-              [ "1" ],
-              [ "0", "1" ],
-              [ "1" ]
-            ],
-            "Onvalue": [
-              [ "0" ],
-              [ "0" ],
-              [ "0" ]
-            ],
-            "settings": [ "bAllowCreateGrass", "bAllowLoadGrass", "bDrawShaderGrass" ],
-            "targetINIs": [ "Skyrim.ini", "Skyrim.ini", "Skyrim.ini" ],
-            "targetSections": [ "Grass", "Grass", "Grass" ],
-            "tooltip": "Toggles off grass.",
-            "type": "Checkbutton"
-          },
           "Fade-in": {
             "Offvalue": [ [ "0" ] ],
             "Onvalue": [ [ "1" ] ],
@@ -1616,8 +1590,35 @@
             "tooltip": "Toggles the gradual, fade-in effect for grass.",
             "type": "Checkbutton"
           },
+          "Draw Grass": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bDrawShaderGrass" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Grass" ],
+            "tooltip": "Toggles drawing grass.",
+            "type": "Checkbutton"
+          },
+          "Create Grass": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bAllowCreateGrass" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Grass" ],
+            "tooltip": "Toggles creating grass positions information.",
+            "type": "Checkbutton"
+          },
+          "Load Grass GID": {
+            "Offvalue": [ [ "0" ] ],
+            "Onvalue": [ [ "1" ] ],
+            "settings": [ "bAllowLoadGrass" ],
+            "targetINIs": [ "Skyrim.ini" ],
+            "targetSections": [ "Grass" ],
+            "tooltip": "Toggles loading grass from gid files.\n\nONLY TURN ON IF YOU KNOW WHAT YOU ARE DOING.\n\nTypically use No Grass In Objects mod for this functionality instead.",
+            "type": "Checkbutton"
+          },
           "Density": {
-            "customWidth": "18",
+            "customWidth": "8",
             "decimal places": "0",
             "from": "120",
             "increment": "1",
@@ -1633,7 +1634,7 @@
             "width": "7"
           },
           "Diversity": {
-            "customWidth": "18",
+            "customWidth": "8",
             "decimal places": "0",
             "from": "1",
             "increment": "1",
@@ -1678,7 +1679,7 @@
             "width": "7"
           },
           "Minimum Wind": {
-            "customWidth": "18",
+            "customWidth": "15",
             "decimal places": "0",
             "from": "0",
             "increment": "1",
@@ -1693,7 +1694,7 @@
             "width": "7"
           },
           "Maximum Wind": {
-            "customWidth": "18",
+            "customWidth": "15",
             "decimal places": "0",
             "from": "0",
             "increment": "1",
@@ -1711,11 +1712,9 @@
       },
       "Trees": {
         "Pack": {
-          "Side": "left",
-          "Expand": 0,
-          "Fill": "none"
+          "Side": "left"
         },
-        "NumberOfVerticallyStackedSettings": "9",
+        "NumberOfVerticallyStackedSettings": "4",
         "Settings": {
           "Dynamic Trees": {
             "Offvalue": [
@@ -1768,6 +1767,7 @@
               }
             }
           },
+          "": "",
           "Max Skinned Trees": {
             "decimal places": "0",
             "customWidth": "22",
@@ -1868,11 +1868,9 @@
       },
       "Water": {
         "Pack": {
-          "Side": "left",
-          "Fill": "none",
-          "Expand": 0
+          "Side": "left"
         },
-        "NumberOfVerticallyStackedSettings": "8",
+        "NumberOfVerticallyStackedSettings": "4",
         "Settings": {
           "Reflect Trees": {
             "Offvalue": [ [ "0" ] ],
