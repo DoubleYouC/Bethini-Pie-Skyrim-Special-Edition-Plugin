@@ -73,6 +73,7 @@
     "SkyrimCustom.ini": "sSkyrim Special EditionINIPath",
     "SkyrimPrefs.ini": "sSkyrim Special EditionINIPath"
   },
+  "Allow Sorted INIs": [ "Skyrim.ini", "SkyrimCustom.ini", "SkyrimPrefs.ini" ],
   "INI_pecking_order": {
     "Skyrim.ini": [ "Skyrim.ini", "SkyrimCustom.ini" ],
     "SkyrimPrefs.ini": [ "Skyrim.ini", "SkyrimCustom.ini", "SkyrimPrefs.ini" ]
