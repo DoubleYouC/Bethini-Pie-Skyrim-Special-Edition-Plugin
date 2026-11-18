@@ -2071,7 +2071,7 @@
             "settings": [ "iNumFocusShadow" ],
             "targetINIs": [ "SkyrimPrefs.ini" ],
             "targetSections": [ "Display" ],
-            "to": "16",
+            "to": "4",
             "tooltip": "Sets the maximum number of objects to use very highly detailed shadows based on where you are looking.",
             "type": "Slider",
             "validate": "integer",
